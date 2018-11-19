@@ -1,0 +1,10 @@
+{
+  "history": {
+    "title": "history.title",
+    "content": "history.content",
+    "bottom": "history.bottom"
+  },
+  "contact": {
+    "title": "contact.title"
+  }
+}

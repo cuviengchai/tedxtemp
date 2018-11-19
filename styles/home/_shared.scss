@@ -1,0 +1,40 @@
+.section_content_container {
+  display: table-cell;
+  vertical-align: middle;
+
+  .section_content {
+    color: $white;
+    font-family: 'latoHeavy';
+    font-size: 1.5em;
+    width: 15rem;
+    letter-spacing: 0.1em;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2.125em;
+      width: 100%;
+    }
+  }
+}
+
+.section_bottom {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  width: 2rem;
+  height: 1.25rem;
+
+  .scroll_down {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1rem;
+    height: 1rem;
+    margin-left: -1rem;
+    border-left: 3px solid $white;
+    border-bottom: 3px solid $white;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+  }
+}

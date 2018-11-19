@@ -1,0 +1,48 @@
+#tedx_partners_container {
+  padding: 8rem 2rem 4rem 2rem;
+
+  @include media-breakpoint-up(md) {
+    padding: 8rem;
+  }
+
+ #tedx_partners_header_top {
+   font-family: 'latoBlack';
+   margin-bottom: 2.5rem;
+   text-align: center;
+   font-size: 1.25em;
+   height: 0%;
+ }
+ #tedx_partners_description {
+   padding-top: 1rem;
+   font-family: 'latoRegular';
+   font-size: 0.875em;
+   color: #464646;
+ }
+ #tedx_partners_header_middle {
+   font-family: 'latoBlack';
+   padding: 5rem 0 4rem 0;
+   text-align: center;
+   font-size: 1.25em;
+ }
+ #tedx_partners_contents_topic {
+   font-family: 'latoBold';
+   text-align: center;
+   font-size: 0.875em;
+   color: #464646;
+   padding: 0rem 0 6rem 0;
+ }
+ #tedx_partners_contents_image {
+   font-family: 'latoRegular';
+   font-size: 0.875em;
+   color: #464646;
+   padding: 1rem 0 0rem 0;
+   text-align: center;
+
+   figure {
+     position: relative;
+     display: inline-block;
+     padding: 0 1rem 0 1rem;
+   }
+
+ }
+}

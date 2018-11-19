@@ -123,7 +123,8 @@ class Home extends Component {
       <Layout styles={this.calculateStyles()} currentPage={'home'}
         isMobile={this.state.isMobile} navbarColor={'white'} router={this.props.router}>
         <section id="landing">
-          <iframe src="https://www.youtube.com/embed/n55JDHCa8D8?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=n55JDHCa8D8" frameBorder="0"></iframe>
+          {/* <iframe src="https://www.youtube.com/embed/n55JDHCa8D8?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=n55JDHCa8D8" frameBorder="0"></iframe> */}
+          <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FTEDxCharoenkrung%2Fvideos%2F365142907273844%2F&show_text=0&width=560" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
           <a className="section_bottom" id="goToHome">
             <span className="scroll_down"></span>
           </a>

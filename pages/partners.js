@@ -6,7 +6,7 @@ import { translate } from 'react-i18next'
 import i18n from '../i18n'
 import Layout from '../components/layout'
 import Partners from '../components/partners'
-
+//deving
 class Partner extends Component {
   constructor(props) {
     super(props)

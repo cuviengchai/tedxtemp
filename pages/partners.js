@@ -95,13 +95,13 @@ class Partner extends Component {
           <div id="tedx_partners_header_middle">
             In 2017, we were thrilled to work with
           </div>
-          {/* <div id="tedx_partners_contents">
+          <div id="tedx_partners_contents">
             {
               this.getContents().map((content, index) => (
                 <Partners key={index} content={content} isMobile={this.state.isMobile} />
               ))
             }
-          </div> */}
+          </div>
         </div>
       </Layout>
     )

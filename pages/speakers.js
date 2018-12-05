@@ -1,12 +1,30 @@
 import { Component } from "react";
-import $ from "jquery";
+
+import Layout from "../components/layout";
+import Content from "../components/content";
+
 import { withRouter } from "next/router";
 import { translate } from "react-i18next";
 
 import i18n from "../i18n";
-import Layout from "../components/layout";
+import { images } from "../static/images/speakers/images";
 
-class About extends Component {
+const speakerItemStyle = {
+  width: "100%",
+  height: "auto"
+};
+
+const SpeakerItem = props => {
+  return (
+    <div className="speaker-item">
+      <h4 className="speaker-item-header">SPEAKER NAME</h4>
+      <hr className="speaker-item-divider" />
+      <img src={props.image} style={speakerItemStyle} alt="profile" />
+    </div>
+  );
+};
+
+class Speakers extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,21 +33,6 @@ class About extends Component {
         : false
     };
   }
-
-  static async getInitialProps({ req }) {
-    if (req && !process.browser) {
-      return Object.assign(
-        i18n.getInitialProps(req, ["common", "about"]),
-        req
-          ? { userAgent: req.headers["user-agent"] }
-          : { userAgent: navigator.userAgent }
-      );
-    }
-    return req
-      ? { userAgent: req.headers["user-agent"] }
-      : { userAgent: navigator.userAgent };
-  }
-
   checkIsMobileDevice(userAgent) {
     return (
       /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(
@@ -40,77 +43,39 @@ class About extends Component {
       )
     );
   }
-
-  contactList() {
-    const socials = {
-      facebook: {
-        link: "https://www.facebook.com/TEDxCharoenkrung/",
-        display: "Facebook"
-      },
-      twitter: {
-        link: "https://twitter.com/TEDxCharoenkrun",
-        display: "Twitter"
-      },
-      email: {
-        link: "mailto:tedxchraroenkrung@gmail.com",
-        display: "E-mail"
-      }
-    };
-
-    return (
-      <ul style={{ listStyleType: "none", padding: 0 }}>
-        {Object.keys(socials).map((s, index) => (
-          <li key={s}>
-            <a href={socials[s]["link"]} style={{ fontFamily: "latoRegular" }}>
-              {socials[s]["display"]}
-            </a>
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
   calculateStyles() {
-    return this.state.isMobile
-      ? {
-          height: "auto",
-          width: "auto",
-          bgColor: "#b7b7b7",
-          headerColor: "#b7b7b7"
-        }
-      : {
-          height: "inherit",
-          width: "inherit",
-          bgColor: "#b7b7b7",
-          headerColor: "#b7b7b7"
-        };
+    return {
+      height: "inherit",
+      width: "inherit",
+      bgColor: "#fff",
+      headerColor: "#fff"
+    };
   }
-
   render() {
+    console.log("IMAGES: ", images);
     return (
       <Layout
         styles={this.calculateStyles()}
-        currentPage={"about"}
-        isMobile={this.state.isMobile}
-        navbarColor={"white"}
+        currentPage={"speakers"}
+        sMobile={this.state.isMobile}
+        navbarColor={"black"}
         router={this.props.router}
       >
-        <div id="tedx_about_container">
-          <div id="tedx_history">
-            <div id="history_head">{this.props.t("history.title")}</div>
-            <div id="history_content">{this.props.t("history.content")}</div>
-            <div id="history_bottom">{this.props.t("history.bottom")}</div>
-          </div>
-          <div id="tedx_contact">
-            <div id="contact_head">{this.props.t("contact.title")}</div>
-            <div id="contact_content">{this.contactList()}</div>
+        <div className="large-super-container">
+          <div className="tedx_speakers_container">
+            <div className="speakers-header">SPEAKERS 2018</div>
+            <hr className="speaker-divider" />
+            <div className="speakers-grid">
+              {images.map((image, idx) => (
+                <SpeakerItem key={idx} image={image} />
+              ))}
+            </div>
           </div>
         </div>
       </Layout>
     );
   }
 }
-
 export default withRouter(
-  translate(["about"], { i18n, wait: process.browser })(About)
+  translate(["speakers"], { i18n, wait: process.browser })(Speakers)
 );

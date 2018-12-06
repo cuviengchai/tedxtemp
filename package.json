@@ -21,7 +21,10 @@
     "preact-compat": "^3.17.0",
     "react-ga": "^2.2.0",
     "react-i18next": "^6.0.6",
-    "uuid": "^3.1.0"
+    "uuid": "^3.1.0",
+    "cross-env": "^5.2.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "scripts": {
     "dev": "babel-node server.js",
@@ -37,7 +40,6 @@
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-wrap-in-js": "^1.1.1",
     "babel-preset-env": "^1.6.0",
-    "cross-env": "^5.0.5",
     "faker": "^4.1.0",
     "node-sass": "^4.5.3",
     "postcss": "^6.0.9",
@@ -45,8 +47,6 @@
     "postcss-easy-import": "^2.1.0",
     "postcss-loader": "^2.0.6",
     "raw-loader": "^0.5.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
     "sass-loader": "^6.0.6"
   }
 }

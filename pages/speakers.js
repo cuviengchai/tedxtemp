@@ -17,9 +17,16 @@ const speakerItemStyle = {
 const SpeakerItem = props => {
   return (
     <div className="speaker-item">
-      <h4 className="speaker-item-header">SPEAKER NAME</h4>
+      <h4 className="speaker-item-header">{props.image.name}</h4>
       <hr className="speaker-item-divider" />
-      <img src={props.image} style={speakerItemStyle} alt="profile" />
+      <img
+        src={props.image.dir}
+        style={speakerItemStyle}
+        alt="profile"
+        className="speaker-image"
+      />
+      <div className="speaker-motto">"{props.image.motto}"</div>
+      <div className="speaker-detail">{props.image.detail}</div>
     </div>
   );
 };
@@ -52,7 +59,6 @@ class Speakers extends Component {
     };
   }
   render() {
-    console.log("IMAGES: ", images);
     return (
       <Layout
         styles={this.calculateStyles()}
@@ -63,7 +69,7 @@ class Speakers extends Component {
       >
         <div className="large-super-container">
           <div className="tedx_speakers_container">
-            <div className="speakers-header">SPEAKERS 2018</div>
+            <div className="speakers-header">SPEAKERS 2017</div>
             <hr className="speaker-divider" />
             <div className="speakers-grid">
               {images.map((image, idx) => (

@@ -5,7 +5,8 @@
   color: $white;
 
   &.has-hover {
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       .image_content_container {
         @include media-breakpoint-up(md) {
           box-shadow: 0px 0px 150px #000;
@@ -13,7 +14,7 @@
           -webkit-transition: all 200ms ease-in;
           -webkit-transform: scale(1.05);
           -ms-transition: all 200ms ease-in;
-          -ms-transform: scale(1.05);   
+          -ms-transform: scale(1.05);
           -moz-transition: all 200ms ease-in;
           -moz-transform: scale(1.05);
           transition: all 200ms ease-in;
@@ -37,9 +38,9 @@
     position: absolute;
     width: 100%;
     display: table;
-    top: 0; 
-    left: 0; 
-    bottom: 0; 
+    top: 0;
+    left: 0;
+    bottom: 0;
     right: 0;
     margin: auto;
     z-index: 1000;
@@ -47,9 +48,9 @@
     .image_content {
       display: table-cell;
       vertical-align: middle;
-      
+
       .content_topic {
-        font-family: 'promptSemiBold';
+        font-family: "promptSemiBold";
         width: 100%;
         font-size: 1.5em;
 
@@ -60,7 +61,7 @@
       }
 
       .content_desc {
-        font-family: 'promptSemiBold';
+        -family: "promptSemiBold";
         font-size: 1.2em;
         color: $white;
       }
@@ -68,11 +69,11 @@
       .topic_date {
         width: 300px;
         margin: 1.5rem auto 0 auto;
-        font-family: 'latoBold';
+        font-family: "latoBold";
         font-size: 0.5em;
         color: $white;
         text-transform: uppercase;
-  
+
         @include media-breakpoint-up(md) {
           width: 400px;
           font-size: 0.75em;
@@ -85,21 +86,21 @@
       height: 1px;
       width: 300px;
       background-color: $white;
-  
+
       @include media-breakpoint-up(md) {
         width: 400px;
       }
-  
+
       &.top {
         margin: 0 auto 1.5rem auto;
       }
-  
+
       &.bottom {
         margin: 1.5rem auto 0 auto;
       }
     }
   }
-  
+
   .content_posted_date {
     position: absolute;
     width: 250px;
@@ -108,7 +109,7 @@
     right: 0;
     margin: 0 auto;
     z-index: 50;
-    font-family: 'promptSemiBold';
+    font-family: "promptSemiBold";
     font-size: 0.5em;
     color: $white;
     text-transform: uppercase;

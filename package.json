@@ -29,7 +29,7 @@
   "scripts": {
     "dev": "babel-node server.js",
     "build": "cross-env NODE_ENV=production next build",
-    "start": "cross-env NODE_ENV=production babel-node server.js",
+    "start": "PORT=80 cross-env NODE_ENV=production babel-node server.js",
     "restart": "pm2 startOrRestart ecosystem.config.js --env production",
     "ec2setup": "pm2 deploy ecosystem.config.js production setup --env production",
     "deploy": "pm2 deploy ecosystem.config.js production --env production"

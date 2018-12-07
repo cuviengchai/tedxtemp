@@ -93,7 +93,7 @@ class Partner extends Component {
             Apart from our staffs, TEDxCharoenkrung has received precious supports from our partners who value ‘ideas worth spreading’. We appreciate your believe in sharing, giving, learning and doing which everyone can reach. Making changes in good ways to society is always be our goal.
           </div>
           <div id="tedx_partners_header_middle">
-            In 2017, we were thrilled to work with
+            In 2018, we were thrilled to work with
           </div>
           <div id="tedx_partners_contents">
             {

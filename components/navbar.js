@@ -101,12 +101,12 @@ class Navbar extends Component {
           <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
             <li className="nav-item tedx_menu_item">
               <a
-                id="watch"
+                id="home"
                 className={`nav-link tedx_link ${this.state.colorStyle}`}
-                href="#"
+                href="/"
                 onClick={() => this.navigateTo()}
               >
-                {this.props.t("common:watch")}
+                {this.props.t("common:home")}
               </a>
             </li>
             <Link

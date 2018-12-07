@@ -68,8 +68,8 @@ i18n
           );
         });
 
-        server.get("/watch", (req, res) => {
-          return app.render(req, res, "/watch", req.query);
+        server.get("/home", (req, res) => {
+          return app.render(req, res, "/index", req.query);
         });
 
         server.get("/partners", (req, res) => {

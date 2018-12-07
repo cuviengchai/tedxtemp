@@ -155,15 +155,20 @@ class Home extends Component {
         navbarColor={"white"}
         router={this.props.router}
       >
-        {/* <iframe src="https://www.youtube.com/embed/n55JDHCa8D8?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=n55JDHCa8D8" frameBorder="0"></iframe> */}
-        {/* <iframe
-          src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FTEDxCharoenkrung%2Fvideos%2F365142907273844%2F&show_text=0&width=560"
+        <iframe
+          src="https://www.facebook.com/v2.3/plugins/video.php?allowfullscreen=true&autoplay=true&container_width=800&href=https%3A%2F%2Fwww.facebook.com%2FTEDxCharoenkrung%2Fvideos%2F365142907273844%2F&show_text=0&width=560"
+          style={{
+            width: "100vw",
+            height: "50vw",
+            marginBottom: "-6px"
+          }}
+          scrolling="no"
           frameborder="0"
-          dataAutoplay="true"
           allowTransparency="true"
           allowFullScreen="true"
-        /> */}
-        <video
+          frameborder="0"
+        />
+        {/* <video
           style={{
             width: "100vw",
             height: "auto",
@@ -173,8 +178,9 @@ class Home extends Component {
           id="main-video"
           // controls={true}
         >
-          <source src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t42.1790-4/22895427_754743698043119_33561956782702592_n.mp4?_nc_cat=110&efg=eyJ2ZW5jb2RlX3RhZyI6InN2ZV9zZCJ9&_nc_eui2=AeGJsLx9k7x0o_DiAskr_EzlEmNEP4olY-_addAy9xsPab-yoVtpMff3nRDIHwJpamM6NnMdH4nWIzwrZoiuLqbVnCTbJkLS6Lhd_ZjESx8Spg&_nc_ht=scontent.fbkk12-3.fna&oh=f228ceded5c1ba655d8c848ed76e3d58&oe=5C01368B" />
-        </video>
+          {/* <source src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t42.1790-4/22895427_754743698043119_33561956782702592_n.mp4?_nc_cat=110&efg=eyJ2ZW5jb2RlX3RhZyI6InN2ZV9zZCJ9&_nc_eui2=AeGJsLx9k7x0o_DiAskr_EzlEmNEP4olY-_addAy9xsPab-yoVtpMff3nRDIHwJpamM6NnMdH4nWIzwrZoiuLqbVnCTbJkLS6Lhd_ZjESx8Spg&_nc_ht=scontent.fbkk12-3.fna&oh=f228ceded5c1ba655d8c848ed76e3d58&oe=5C01368B" /> */}
+        {/* <source src="https://www.facebook.com/TEDxCharoenkrung/videos/365142907273844/" />
+        </video> */}
         <section id="landing">
           <a className="section_bottom" id="goToHome">
             <span className="scroll_down" />

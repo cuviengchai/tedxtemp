@@ -25,7 +25,7 @@ const SpeakerItem = props => {
         alt="profile"
         className="speaker-image"
       />
-      <div className="speaker-motto">"{props.image.motto}"</div>
+      <div className="speaker-motto">“{props.image.motto}”</div>
       <div className="speaker-detail">{props.image.detail}</div>
     </div>
   );
@@ -84,27 +84,28 @@ class Speakers extends Component {
         router={this.props.router}
       >
         <div className="large-super-container">
-          <div className="tedx_speakers_container">
+          <div
+            className={
+              this.state.isMobile
+                ? "tedx-speakers-container-mobile"
+                : "tedx-speakers-container-desktop"
+            }
+          >
             <div className="speakers-header">SPEAKERS 2017</div>
             <hr className="speaker-divider" />
-            {this.state.isMobile ? (
-              <div className="speakers-grid-mobile">
-                {images.map((image, idx) => (
-                  <div>
-                    <SpeakerItem key={idx} image={image} />
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="speakers-grid-desktop">
-                {" "}
-                {images.map((image, idx) => (
-                  <div>
-                    <SpeakerItem key={idx} image={image} />
-                  </div>
-                ))}
-              </div>
-            )}
+            <div
+              className={
+                this.state.isMobile
+                  ? "speakers-grid-mobile"
+                  : "speakers-grid-desktop"
+              }
+            >
+              {images.map((image, idx) => (
+                <div>
+                  <SpeakerItem key={idx} image={image} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Layout>

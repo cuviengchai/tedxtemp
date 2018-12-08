@@ -17,7 +17,7 @@ const speakerItemStyle = {
 const SpeakerItem = props => {
   return (
     <div className="speaker-item">
-      <h4 className="speaker-item-header">{props.image.name}</h4>
+      <h5 className="speaker-item-header">{props.image.name}</h5>
       <hr className="speaker-item-divider" />
       <img
         src={props.image.dir}
@@ -35,11 +35,27 @@ class Speakers extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isMobile: props.userAgent
-        ? this.checkIsMobileDevice(props.userAgent)
-        : false
+      // isMobile: props.userAgent
+      //   ? this.checkIsMobileDevice(props.userAgent)
+      //   : false
+      isMobile: this.checkIsMobileDevice(props.userAgent)
     };
   }
+
+  static async getInitialProps({ req }) {
+    if (req && !process.browser) {
+      return Object.assign(
+        i18n.getInitialProps(req, ["common", "read"]),
+        req
+          ? { userAgent: req.headers["user-agent"] }
+          : { userAgent: navigator.userAgent }
+      );
+    }
+    return req
+      ? { userAgent: req.headers["user-agent"] }
+      : { userAgent: navigator.userAgent };
+  }
+
   checkIsMobileDevice(userAgent) {
     return (
       /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(
@@ -63,7 +79,7 @@ class Speakers extends Component {
       <Layout
         styles={this.calculateStyles()}
         currentPage={"speakers"}
-        sMobile={this.state.isMobile}
+        isMobile={this.state.isMobile}
         navbarColor={"black"}
         router={this.props.router}
       >
@@ -71,11 +87,24 @@ class Speakers extends Component {
           <div className="tedx_speakers_container">
             <div className="speakers-header">SPEAKERS 2017</div>
             <hr className="speaker-divider" />
-            <div className="speakers-grid">
-              {images.map((image, idx) => (
-                <SpeakerItem key={idx} image={image} />
-              ))}
-            </div>
+            {this.state.isMobile ? (
+              <div className="speakers-grid-mobile">
+                {images.map((image, idx) => (
+                  <div>
+                    <SpeakerItem key={idx} image={image} />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="speakers-grid-desktop">
+                {" "}
+                {images.map((image, idx) => (
+                  <div>
+                    <SpeakerItem key={idx} image={image} />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </Layout>

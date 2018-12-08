@@ -5,19 +5,29 @@
 .tedx_speakers_container {
   background-color: #ffffff;
   color: black;
-  margin: -4em auto !important;
-  //   width: 80% !important;
+  margin-top: 7rem;
+  margin-bottom: 2rem !important;
   text-align: center;
+  height: 100rem !important;
+  padding: 0;
+  // @include media-breakpoint-up(md) {
+  //   padding: 12rem;
+  // }
 
-  @include media-breakpoint-up(md) {
-    padding: 12rem;
-  }
-
-  @include media-breakpoint-up(lg) {
-    padding: 14rem;
-  }
+  // @include media-breakpoint-up(lg) {
+  //   padding: 14rem;
+  // }
 }
-.speakers-grid {
+.speakers-grid-mobile {
+  display: grid;
+  grid-template-columns: 50% 50% !important;
+  padding: 3% 0%;
+  min-width: 100%;
+  width: 100% !important;
+  grid-column-gap: 5%;
+  grid-row-gap: 1%;
+}
+.speakers-grid-desktop {
   display: grid;
   grid-template-columns: 30% 30% 30% !important;
   padding: 3% 0%;
@@ -25,7 +35,6 @@
   width: 100% !important;
   grid-column-gap: 5%;
   grid-row-gap: 1%;
-  //   padding: 10px;
 }
 .speakers-item {
   background-color: rgba(255, 255, 255, 0.8);
@@ -54,9 +63,15 @@
   margin: 0% 0% !important;
   padding: 0% 0% !important;
   font-family: "promptMedium" !important;
+  height: 2vw;
+  display: inline-block !important;
+  // max-width: 200px;
+  // word-wrap: break-word;
 }
 .speaker-image {
-  margin: 10px 10px !important;
+  // margin: 10px 10px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .speaker-motto {
   font-size: 120% !important;
@@ -65,4 +80,5 @@
 }
 .speaker-detail {
   font-family: "promptRegular" !important;
+  text-align: left;
 }

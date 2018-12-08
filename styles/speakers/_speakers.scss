@@ -2,7 +2,7 @@
   //   text-align: "center";
   background-color: #ffffff;
 }
-.tedx_speakers_container {
+.tedx-speakers-container-mobile {
   background-color: #ffffff;
   color: black;
   margin-top: 7rem;
@@ -18,6 +18,24 @@
   //   padding: 14rem;
   // }
 }
+
+.tedx-speakers-container-desktop {
+  background-color: #ffffff;
+  color: black;
+  margin-top: -5rem;
+  margin-bottom: 2rem !important;
+  text-align: center;
+  height: 100rem !important;
+  padding: 0;
+  @include media-breakpoint-up(md) {
+    padding: 12rem;
+  }
+
+  // @include media-breakpoint-up(lg) {
+  //   padding: 14rem;
+  // }
+}
+
 .speakers-grid-mobile {
   display: grid;
   grid-template-columns: 50% 50% !important;
